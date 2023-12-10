@@ -13,8 +13,9 @@ import java.util.Optional;
 public interface LikesRepository extends JpaRepository<Likes, Long> {
     Optional<Object> findByUserAndBoard(User user, Board board);
 
+    // 좋아요 삭제
     void deleteByUserAndBoard(User user, Board board); // like_id로 삭제하는게 아니라 User, Board있는지 확인 후 삭제하는 것이라 그럼!
 
-    // 마이페이지에서 추가
+    // 마이페이지 추가
     List<Likes> findByUser(User user);
 }
